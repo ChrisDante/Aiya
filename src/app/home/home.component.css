@@ -9,7 +9,7 @@ nz-layout{
 @media screen and  (min-width: 1024px) {
     .interaction{
         margin: calc(50% - 500px) auto;
-    }    
+    }
 }
 h1{
     font-size: 3em;
