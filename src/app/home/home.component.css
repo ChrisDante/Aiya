@@ -1,0 +1,21 @@
+
+nz-layout{
+    height: 100%;
+}
+.interaction {
+    text-align: center;
+    margin: 20px auto;
+}
+@media screen and  (min-width: 1024px) {
+    .interaction{
+        margin: calc(50% - 500px) auto;
+    }    
+}
+h1{
+    font-size: 3em;
+}
+.presentation{
+    height: 100vh;
+    background: url('http://unsplash.it/1234/1234');
+    background-size: cover;
+}

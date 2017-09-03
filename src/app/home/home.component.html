@@ -1,0 +1,21 @@
+<nz-layout>
+
+    <nz-content>
+        <div nz-row [nzGutter]="8">
+            <div class="interaction" nz-col [nzXs]="24" [nzSm]="24" [nzMd]="12" [nzLg]="12" [nzXl]="12" [nzOffset]="0">
+                <img src="http://unsplash.it/128/128" alt="Aiya Logo" class="logo">
+                <h1>Title</h1>
+                <p class="description">description</p>
+                <button nz-button (click)="onClickMe()" [nzType]="'primary'" [nzSize]="'small'">
+                    <span>Sign In</span>
+                </button> 
+                <a href="SignUp">Sign up</a>
+                
+            </div>
+            <div class="presentation" nz-col [nzXs]="24" [nzSm]="24" [nzMd]="12" [nzLg]="12" [nzXl]="12">
+                hello?
+            </div>
+        </div>
+    </nz-content>
+
+</nz-layout>
