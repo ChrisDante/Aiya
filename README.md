@@ -4,7 +4,7 @@ Aiya is a platform for your everyday's life.
 It aimed at being a handful tool/web system for serving information you want.
 And as a reminder, it could remember what you've done and what you haven't, in order to let you know what you can do clearly and let you work effectively.
 
-
+Aiya use ZORRO(ant design).
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.2.
