@@ -1,6 +1,8 @@
 form{
-  margin: calc(50vh - 120px) auto;
+  padding-top: calc(50vh - 120px);
+  margin: 0 auto;
 }
+
 
 .login-form {
     max-width: 300px;
