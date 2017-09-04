@@ -83,7 +83,6 @@ export class SignupComponent implements OnInit {
       birthDay            : [ '', [ this.birthDayValidator ] ],
       password            : [ '', [ Validators.required ] ],
       passwordConfirmation: [ '', [ this.passwordConfirmationValidator ] ]
-      // comment             : [ '', [ Validators.required ] ]
     });
   };
 
