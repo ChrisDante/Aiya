@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SignupService } from '../signup.service';
 
 import {
   FormBuilder,
@@ -11,18 +12,14 @@ import { Observable } from 'rxjs/Observable';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
+  styleUrls: ['./signup.component.css'],
+  providers: [SignupService]
 })
 export class SignupComponent implements OnInit {
 
+  subvalue: Object;
   validateForm: FormGroup;
-  submitForm = ($event, value) => {
-    $event.preventDefault();
-    for (const key in this.validateForm.controls) {
-      this.validateForm.controls[ key ].markAsDirty();
-    }
-    console.log(value);
-  };
+  submitForm: Function;
 
   resetForm($event: MouseEvent) {
     $event.preventDefault();
@@ -70,21 +67,25 @@ export class SignupComponent implements OnInit {
       return { confirm: true, error: true };
     }
   };
-  birthDayValidator = (control: FormControl): any => {
-    if (new Date(control.value) > new Date()) {
-      return { expired: true, error: true }
-    }
-  };
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private signupService: SignupService) {
     this.validateForm = this.fb.group({
       userName            : [ '', [ Validators.required ], [ this.userNameAsyncValidator ] ],
       email               : [ '', [ this.emailValidator ] ],
-      birthDay            : [ '', [ this.birthDayValidator ] ],
       password            : [ '', [ Validators.required ] ],
       passwordConfirmation: [ '', [ this.passwordConfirmationValidator ] ]
     });
-  };
+
+    this.submitForm = ($event, value) => {
+      $event.preventDefault();
+      for (const key in this.validateForm.controls) {
+        this.validateForm.controls[ key ].markAsDirty();
+      }
+      console.log(value)
+      signupService.makeRequest(value);
+    };
+
+  }
 
   ngOnInit() {
   }

@@ -8,7 +8,7 @@ export class SigninService {
   constructor(private http: Http) { }
   makeRequest(req: Object): void {
     this.loading = true;
-    this.http.request('/makesignin', req)
+    this.http.post('/makesignin', req)
         .subscribe((res) => {
           this.data = res.json();
           this.loading = false;

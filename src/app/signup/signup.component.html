@@ -24,16 +24,6 @@
         </div>
       </div>
       <div nz-form-item nz-row>
-        <div nz-form-label nz-col [nzSpan]="7">
-          <label nz-form-item-required>BirthDay</label>
-        </div>
-        <div nz-col [nzSpan]="12" nz-form-control [nzValidateStatus]="getFormControl('birthDay')">
-          <nz-datepicker formControlName="birthDay" [nzSize]="'large'" [nzPlaceHolder]="'Choose your birthday'" style="width: 100%;"></nz-datepicker>
-          <div nz-form-explain *ngIf="getFormControl('birthDay').dirty&&getFormControl('birthDay').hasError('required')">Please input your birthday!</div>
-          <div nz-form-explain *ngIf="getFormControl('birthDay').dirty&&getFormControl('birthDay').hasError('expired')">Birthday must less than today!</div>
-        </div>
-      </div>
-      <div nz-form-item nz-row>
         <div nz-col [nzSpan]="7" nz-form-label>
           <label nz-form-item-required>Password</label>
         </div>

@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
-import { Http, HttpModule } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class SignupService {
   data: Object;
   loading: Boolean;
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
   makeRequest(req: Object): void {
     this.loading = true;
-    this.http.request('/makesignup', req)
+    this.http.post('/makesignup', JSON.stringify(req))
         .subscribe((res) => {
-          this.data = res.json();
+          this.data = res;
           this.loading = false;
         });
   }
